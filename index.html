@@ -3,110 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>XVIII: BLACK & GOLD</title>
+    <title>XVIII | THE OBSIDIAN GALA</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;900&family=Syncopate:wght@400;700&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading">
+
+    <div class="scanline"></div>
 
     <div id="loader">
-        <div class="loader-circle"></div>
-        <div class="loader-text">LOADING LUXURY</div>
+        <div class="loader-content">
+            <div class="glitch-text" data-text="DECRYPTING">DECRYPTING</div>
+            <div class="progress-container"><div id="progress-bar"></div></div>
+        </div>
     </div>
 
-    <div id="cursor" class="desktop-only"></div>
-    <div id="cursor-blur" class="desktop-only"></div>
-
     <div id="intro-screen">
-        <div class="intro-content">
-            <h1 class="glitch" data-text="RESTRICTED">RESTRICTED</h1>
-            <p>BIOMETRIC SCAN...</p>
-            <button id="enter-btn">UNLOCK ACCESS</button>
+        <div class="vignette"></div>
+        <div class="intro-box">
+            <h2 class="fade-in">PROTOCOL XVIII</h2>
+            <div class="scanner-container">
+                <div class="scanner-line"></div>
+                <p>IDENTITY VERIFICATION REQUIRED</p>
+            </div>
+            <button id="enter-btn" class="btn-glow">INITIATE SESSION</button>
         </div>
     </div>
 
     <main id="app">
-        <div class="sound-control" onclick="toggleMute()">
-            <i id="sound-icon" class="fas fa-volume-off"></i> </div>
+        <button id="mute-toggle" class="glass-ui"><i class="fas fa-volume-up"></i></button>
 
         <section class="hero">
-            <div id="particles"></div>
+            <div class="parallax-shard s1"></div>
+            <div class="parallax-shard s2"></div>
             
-            <p class="subtitle" data-aos="fade-down">THE LEGACY BEGINS</p>
-            <h1 class="main-title">XVIII</h1>
-            
-            <div class="timer-wrapper" data-aos="zoom-in">
-                <div class="time-unit"><span id="d">00</span><small>D</small></div>
-                <div class="time-unit"><span id="h">00</span><small>H</small></div>
-                <div class="time-unit"><span id="m">00</span><small>M</small></div>
-                <div class="time-unit"><span id="s">00</span><small>S</small></div>
-            </div>
-        </section>
-
-        <section class="poll-section">
-            <h2 data-aos="fade-right">CHOOSE YOUR ROLE</h2>
-            <div class="card" data-aos="fade-up">
-                <div class="grid-buttons">
-                    <button class="choice-btn" data-reply="Принято, Шеф.">
-                        <i class="fas fa-crown"></i> BOSS
-                    </button>
-                    <button class="choice-btn" data-reply="Следи за руками!">
-                        <i class="fas fa-magic"></i> TRICKSTER
-                    </button>
-                    <button class="choice-btn" data-reply="Наливай.">
-                        <i class="fas fa-glass-whiskey"></i> DRINKER
-                    </button>
-                    <button class="choice-btn" data-reply="Король танцпола.">
-                        <i class="fas fa-music"></i> DANCER
-                    </button>
+            <div class="hero-content">
+                <p class="tagline">PRIVATE INVITATION ONLY</p>
+                <h1 class="main-title">AUGUST<br><span>03</span></h1>
+                <div class="countdown-grid">
+                    <div class="c-item"><span id="d">00</span><label>DAYS</label></div>
+                    <div class="c-item"><span id="h">00</span><label>HRS</label></div>
+                    <div class="c-item"><span id="m">00</span><label>MIN</label></div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-section">
-            <h2 data-aos="fade-left">EVIDENCE</h2>
-            <div class="gallery-grid">
-                <div class="frame-gold" data-aos="flip-left">
-                    <img src="meme.jpeg" alt="Meme 1">
-                    <div class="frame-caption">FILE #001</div>
+        <section class="identity-section">
+            <h2 class="sec-title">IDENTITY CONFIG</h2>
+            <div class="poll-grid">
+                <div class="role-card" onclick="setRole('VIP-MAGNAT', this)">
+                    <div class="icon-box"><i class="fas fa-gem"></i></div>
+                    <h3>MAGNAT</h3>
+                    <p>Dominance & Power</p>
                 </div>
-                <div class="frame-gold" data-aos="flip-right">
-                    <img src="meme-vitya.jpg" alt="Meme 2">
-                    <div class="frame-caption">FILE #002</div>
+                <div class="role-card" onclick="setRole('GHOST-AGENT', this)">
+                    <div class="icon-box"><i class="fas fa-user-secret"></i></div>
+                    <h3>AGENT</h3>
+                    <p>Silence & Style</p>
+                </div>
+                <div class="role-card" onclick="setRole('PARTY-ANIMAL', this)">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>KINETIC</h3>
+                    <p>Pure Energy</p>
+                </div>
+            </div>
+            <div id="ticket-result" class="hidden"></div>
+        </section>
+
+        <section class="archive">
+            <h2 class="sec-title">THE ARCHIVES</h2>
+            <div class="meme-stack">
+                <div class="meme-item" data-aos="zoom-in-up">
+                    <img src="meme.jpeg" alt="Evidence 1">
+                    <span class="stamp">CLASSIFIED</span>
+                </div>
+                <div class="meme-item" data-aos="zoom-in-up" data-aos-delay="200">
+                    <img src="meme-vitya.jpg" alt="Evidence 2">
+                    <span class="stamp">SUBJECT: VITYA</span>
                 </div>
             </div>
         </section>
 
-        <section class="rsvp-section">
-            <h2 data-aos="zoom-in">FINAL CHOICE</h2>
-            <div class="rsvp-container">
-                <p class="rsvp-text">Подтвердить присутствие?</p>
-                <div class="buttons-area">
-                    <button id="yes-btn">CONFIRM</button>
-                    <button id="no-btn">DECLINE</button>
+        <section class="rsvp-final">
+            <div class="final-card">
+                <h2>EXECUTE PROTOCOL?</h2>
+                <div class="rsvp-controls">
+                    <button id="yes-btn" class="main-btn">CONFIRM ENTRY</button>
+                    <button id="no-btn" class="ghost-btn">ABORT</button>
                 </div>
             </div>
         </section>
-        
-        <footer style="padding: 40px 0; opacity: 0.5; font-size: 0.8rem;">
-            PRIVATE EVENT | 2026
-        </footer>
+
     </main>
 
-    <div id="custom-modal" class="modal">
-        <div class="modal-content">
-            <h3 id="modal-title">TITLE</h3>
-            <p id="modal-text">Text</p>
-            <button onclick="closeModal()">CLOSE</button>
-        </div>
-    </div>
-
-    <audio id="bg-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bg-music" loop><source src="music.mp3" type="audio/mpeg"></audio>
+    <audio id="sfx-click"><source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg"></audio>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
