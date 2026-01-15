@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>XVIII: BLACK & GOLD</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">LOADING LUXURY</div>
+    </div>
+
+    <div id="cursor" class="desktop-only"></div>
+    <div id="cursor-blur" class="desktop-only"></div>
+
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1 class="glitch" data-text="RESTRICTED">RESTRICTED</h1>
+            <p>BIOMETRIC SCAN...</p>
+            <button id="enter-btn">UNLOCK ACCESS</button>
+        </div>
+    </div>
+
+    <main id="app">
+        <div class="sound-control" onclick="toggleMute()">
+            <i id="sound-icon" class="fas fa-volume-off"></i> </div>
+
+        <section class="hero">
+            <div id="particles"></div>
+            
+            <p class="subtitle" data-aos="fade-down">THE LEGACY BEGINS</p>
+            <h1 class="main-title">XVIII</h1>
+            
+            <div class="timer-wrapper" data-aos="zoom-in">
+                <div class="time-unit"><span id="d">00</span><small>D</small></div>
+                <div class="time-unit"><span id="h">00</span><small>H</small></div>
+                <div class="time-unit"><span id="m">00</span><small>M</small></div>
+                <div class="time-unit"><span id="s">00</span><small>S</small></div>
+            </div>
+        </section>
+
+        <section class="poll-section">
+            <h2 data-aos="fade-right">CHOOSE YOUR ROLE</h2>
+            <div class="card" data-aos="fade-up">
+                <div class="grid-buttons">
+                    <button class="choice-btn" data-reply="Принято, Шеф.">
+                        <i class="fas fa-crown"></i> BOSS
+                    </button>
+                    <button class="choice-btn" data-reply="Следи за руками!">
+                        <i class="fas fa-magic"></i> TRICKSTER
+                    </button>
+                    <button class="choice-btn" data-reply="Наливай.">
+                        <i class="fas fa-glass-whiskey"></i> DRINKER
+                    </button>
+                    <button class="choice-btn" data-reply="Король танцпола.">
+                        <i class="fas fa-music"></i> DANCER
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 data-aos="fade-left">EVIDENCE</h2>
+            <div class="gallery-grid">
+                <div class="frame-gold" data-aos="flip-left">
+                    <img src="meme.jpeg" alt="Meme 1">
+                    <div class="frame-caption">FILE #001</div>
+                </div>
+                <div class="frame-gold" data-aos="flip-right">
+                    <img src="meme-vitya.jpg" alt="Meme 2">
+                    <div class="frame-caption">FILE #002</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp-section">
+            <h2 data-aos="zoom-in">FINAL CHOICE</h2>
+            <div class="rsvp-container">
+                <p class="rsvp-text">Подтвердить присутствие?</p>
+                <div class="buttons-area">
+                    <button id="yes-btn">CONFIRM</button>
+                    <button id="no-btn">DECLINE</button>
+                </div>
+            </div>
+        </section>
+        
+        <footer style="padding: 40px 0; opacity: 0.5; font-size: 0.8rem;">
+            PRIVATE EVENT | 2026
+        </footer>
+    </main>
+
+    <div id="custom-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">TITLE</h3>
+            <p id="modal-text">Text</p>
+            <button onclick="closeModal()">CLOSE</button>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
